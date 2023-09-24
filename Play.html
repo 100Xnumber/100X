@@ -1,0 +1,140 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+<meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR2 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
+<title>100X - PLAY YOUR ODDS & WIN</title>
+<script src="main.js"></script>
+<script src="machine.js"></script>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="favicon" href="favicon.ico">
+<link rel="shortcut icon" href="icon.png">
+<meta name="viewport" content="width=device-width">
+<script src="users.js"></script>
+<style></style>
+</head>
+<body onbeforeunload="return cancelAllBets()">
+<div id="header">
+<div class="menuicon" tabindex="2" onclick="mnu = document.querySelector('#menu'); if(mnu.zIndex=='4'){ mnu.blur(); } else { mnu.focus(); }">☰</div>
+<div class="logo" tabindex="2"><a href=""></a></div>
+<div class="balance" tabindex="2" onclick="wnu = document.querySelector('#wallet'); if(wnu.zIndex=='4'){ wnu.blur(); } else { wnu.focus(); }">ZAR<span id="balance">0.00</span> <font size="2">&#x25BC;</font></div>
+<div class="account" tabindex="2" onclick="location='Account.html';"></div>
+</div>
+<div id="content">
+<div id="window">
+<div id="eta">Next round starts in <font id='tts'></font> seconds.</div><div id="winzone"></div>
+<div class="tlink" tabindex="2" onclick="table()">Table</div>
+<div class="bets">
+<div class="bet" tabindex="2" onfocus="cancelBet(this)">
+<font class="hun" id="hun1"></font>
+<div class="heading">Bet 1</div>
+<div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" oninput="validity.valid||(value='');" id="number1" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" min="0" max="100" onchange="checkThis(this,'bet')" class="numbin"></div>
+<div class="amount">Amount: ZAR<input type="number" oninput="" id="amount1" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" min="2" max="10000" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
+<div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
+</div>
+<div class="bet" tabindex="2" onfocus="cancelBet(this)">
+<font class="hun" id="hun2"></font>
+<div class="heading">Bet 2</div>
+<div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number2" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="checkThis(this,'bet')" class="numbin"></div>
+<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount2" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
+<div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
+</div>
+<div class="bet adder" tabindex="2" onfocus="cancelBet(this)">
+<font class="hun" id="hun3"></font>
+<div class="heading">Bet 3</div>
+<div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number3" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
+<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount3" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
+<div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
+</div>
+<div class="bet hidden" tabindex="2" onfocus="cancelBet(this)">
+<font class="hun" id="hun4"></font>
+<div class="heading">Bet 4</div>
+<div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number4" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
+<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount4" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
+<div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
+</div>
+<div class="bet hidden" tabindex="2" onfocus="cancelBet(this)">
+<font class="hun" id="hun5"></font>
+<div class="heading">Bet 5</div>
+<div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number5" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
+<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount5" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
+<div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
+</div>
+<p>&nbsp;</p>
+</div>
+
+</div>
+</div>
+<div id="footer">
+<div class="prl" tabindex="2" onclick="toggle('.pastrounds',this);">Past Rounds</div>
+<div class="sbl" tabindex="2" onclick="toggle('.sidebets',this);">Top Bets</div>
+</div>
+
+
+<div class="pastrounds">
+<div class="heading">Past Rounds</div>
+<div class="list">
+<div class="listing"> </div>
+</div>
+</div>
+
+<div class="sidebets">
+<div class="heading">Top Bets</div>
+<div class="list">
+<div class="listing"></div>
+</div>
+</div>
+
+<div id="menu" tabindex="2">
+<div class="mitem" tabindex="2" onselectstart="location = 'HowToPlay.html';">How to Play</div>
+<div class="mitem" tabindex="2" onselectstart="location = 'Wins.html';">Highest Wins So Far</div>
+<div class="mitem" tabindex="2" onselectstart="location = 'Payouts.html';">Payouts</div>
+<div class="mitem" tabindex="2" onselectstart="location = 'Support.html';">Support</div>
+<div class="mitem" tabindex="2" onselectstart="location = 'About.html';">About</div>
+<div class="mitem" tabindex="2" onselectstart="location = 'Legal.html';">Terms & Condtions</div>
+<div class="before" tabindex="2" onclick=""></div>
+</div>
+<div id="wallet" tabindex="2">
+<div class="witem" tabindex="2" onselectstart="location = 'Withdraw.html';">Withdraw</div>
+<div class="witem" tabindex="2" onselectstart="location = 'Deposit.html';">Deposit</div>
+<div class="witem" tabindex="2" onselectstart="">Transfer <font>(Coming Soon)</font></div>
+<div class="witem" tabindex="2" onselectstart="location = 'Support.html';">Support</div>
+<div class="witem" tabindex="2" onselectstart="location = 'Wins.html';" id="comba">100X Balance<br/><font id="combal1">ZAR19 350 090</font></div>
+<div class="before" tabindex="2" onclick=""></div>
+</div>
+<div style="display:none;" id="bb1"></div>
+<div style="display:none;" id="bb2"></div>
+<div style="display:none;" id="bb3"></div>
+<div style="display:none;" id="bb4"></div>
+<div style="display:none;" id="bb5"></div>
+<div style="display:none;" id="userdb"></div>
+<audio id="tone" controls><source src="won.mp3" type="audio/wav"></audio>
+<div id="table">
+<div class="cell tit" id="teta"></div>
+<div class="cell r1"></div>
+<div class="cell r2"></div>
+<div class="cell r3"></div>
+<div class="cell r4"></div>
+<div class="cell r5"></div>
+<div class="cell r6"></div>
+<div class="cell r7"></div>
+
+<div class="cell y1">x 1</div>
+<div class="cell y2">x 2</div>
+<div class="cell y3">x 10</div>
+<div class="cell y4">x 100</div>
+<div class="cell y5">x 10</div>
+<div class="cell y6">x 2</div>
+<div class="cell y7">x 1</div>
+</div>
+<div id="connection"><div class="center connet"><img class="loader" src="loading.gif"/></div></div>
+<div id="real_time" style="display:none;"></div>
+</body>
+<script>
+</script>
+</html>

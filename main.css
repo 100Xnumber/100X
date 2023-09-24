@@ -1,0 +1,110 @@
+@font-face {font-family:rarial;src:url(roundedarial.ttf);}
+@font-face {font-family:bahn;src:url(bahnschrift.ttf);}
+@font-face {font-family:roboto;src:url(roboto.ttf);}
+* {background-repeat:no-repeat;box-sizing:border-box;margin:0px;}
+body {font-size:14px;margin:0px;width:100%;font-family:bahn;}
+div {display:block;outline:none;outline-color:transparent;}
+[tabindex="2"] {cursor:pointer;}
+.invisible {opacity:0;}
+
+.center {transform:translate(-50%,-50%);left:50%;top:50%;}
+
+#header {background-color:white;z-index:3;height:44px;width:100%;overflow:hidden;border-bottom:1px solid transparent;box-shadow:0px 1px 4px rgba(0,0,0,0.5);position:fixed;top:0px;left:0px;}
+.lefthead {position:absolute;width:50%;left:0px;height:100%;}
+.righthead {position:absolute;width:50%;right:0px;height:100%;}
+.menuicon {left:14px;position:absolute;height:40px;width:40px;font-weight:bold;font-size:20px;top:3px;line-height:40px;}
+.logo {left:40px;position:absolute;height:41px;width:80px;background-image:url(logo.png);background-size:cover;background-position:50%;top:3px;}
+.logo a {text-decoration:none;height:100;width:100%;display:block;}
+.balance {right:60px;position:absolute;height:40px;min-width:80px;top:3px;line-height:40px;font-size:16px;overflow:hidden;}
+.account {right:14px;position:absolute;height:30px;width:30px;top:7px;line-height:40px;font-size:15px;border-radius:30px;border:1px solid #aaa;background-color:#ccc;background-image:url(user.png);background-size:105% 105%;background-position:50% 0px;overflow:hidden;}
+.balance font {position:relative;left:-2px;top:-1px;cursor:pointer;}
+.balance span#balance {font-size:16px;}
+.balance span#balance.won {color:rgba(0,255,100,1);font-weight:bold;transform:scale(1.1,1.1);}
+
+#content {z-index:2;position:fixed;width:100%;height:calc(100% - 42px);top:42px;left:0px;overflow-x:hidden;overflow-y:auto;background-color:#efefef;}
+
+
+#eta {height:5em;width:calc(100% - 8px);line-height:5em;text-align:center;font-size:14px;font-family:bahn;display:block;font-weight:bold;border-bottom:1px solid #eee;margin-left:4px;}
+.bets {height:calc(100% - 5em);overflow-x:hidden;overflow-y:auto;}
+.bet {height:7.3em;font-size:13px;width:calc(100% - 16px);margin-left:8px;margin-right:8px;margin-top:14px;padding:4px;overflow:hidden;border-bottom:1px solid #eee;}
+.bet::before {float:right;width:14px;background-color:orange;height:100%;right:0px;top:0px;content:"";}
+.bet.locked::before {float:right;width:14px;background-color:#0f0;height:100%;right:0px;top:0px;content:"";}
+.bet.locked::after {float:left;position:relative;width:100%;background-color:rgba(255,255,255,0.5);height:100%;right:0px;top:-100%;content:"Edit Bet  ✎ ";font-size:15px;padding-top:1.75em;text-align:center;color:gray;font-weight:regular;}
+.bet .heading {margin-top:2px;font-weight:bold;}
+.bet .amount {margin-top:2px;font-size:14px;}
+.bet .selection {margin-top:2px;font-size:14px;}
+.bet .status {margin-top:7px;color:rgba(0,100,255,1);font-family:rarial;font-weight:bold;float:left;}
+.bet .status.autobut {margin-left:3em;}
+.bet input {background-color:transparent;border:1px solid #efefef;color:#222;width:8em;position:relative;left:-1px;bottom:0px;outline-color:#0f0;font-size:14px;border-bottom:0px solid transparent;border-left:0px solid transparent;font-family:inherit;}
+.bet input:focus {left:4px;}
+
+.bet.hidden {display:none;}
+.bet.adder::before {position:relative;content:"Add bet + ";background-color:rgba(255,255,255,1);float:left;width:100%;height:7.3em;top:0;left:0px;text-align:center;line-height:6em;font-weight:bold;color:dimgray;cursor:pointer;}
+
+.tlink {color:rgba(0,100,255,1);font-family:rarial;position:absolute;left:50%;top:64px;transform:translate(-50%,0);font-size:12px;height:20px;line-height:20px;border:1px solid #efefef;border-radius:2px;background-color:white;width:10em;text-align:center;}
+
+.pastrounds .heading {font-wight:bold;border-bottom:1px solid white;color:white;margin-top:4px;height:24px;line-height:20px;width:100%;padding-left:8px;}
+.pastrounds .list {width:100%;height:calc(100% - 26px);overflow-x:hidden;overflow-y:auto;padding:8px;font-size:12px;padding-top:16px;}
+.pastrounds .listing {color:white;margin-top:0px;}
+
+.sidebets .heading {font-wight:bold;border-bottom:1px solid white;color:white;margin-top:4px;height:24px;line-height:20px;width:100%;padding-left:8px;}
+.sidebets .list {width:100%;height:calc(100% - 26px);overflow-x:hidden;overflow-y:auto;padding:8px;font-size:12px;}
+.sidebets .listing {color:white;margin-top:10px;}
+
+.split {border-top:1px solid transparent;margin-top:8px;}
+
+#menu .before {content:"";background-color:transparent;height:50px;position:absolute;top:-50px;width:50px;}
+#menu {position:fixed;top:45px;left:0px;background-color:white;box-shadow:0px 1px 4px rgba(0,0,0,0.5);border:1px solid #efefef;z-index:0;height:13em;font-size:16px;width:15em;padding-top:0.65em;border-top:1px solid white;}
+#menu:focus {z-index:4;}
+.mitem {line-height:2em;height:2em;padding-left:14px;}
+.mitem:hover, .mitem:active {background-color:rgba(0,100,255,1);color:white;}
+
+#wallet .before {content:"";background-color:transparent;height:50px;position:absolute;top:-50px;width:100px;right:50px;}
+#wallet {position:fixed;top:45px;right:0px;background-color:white;box-shadow:0px 1px 4px rgba(0,0,0,0.5);border:1px solid #efefef;z-index:0;height:14em;font-size:16px;width:15em;padding-top:0.65em;border-top:1px solid white;}
+#wallet:focus {z-index:4;}
+.witem {line-height:2em;height:2em;padding-left:14px;}
+.witem:hover, .mitem:active {background-color:rgba(0,100,255,1);color:white;}
+#wallet .witem font {font-size:15px;color:#555;}
+
+
+#winner {font-size:20px;font-family:rarial;color:rgba(50,100,250,1);font-weight:bold;}
+
+
+.winz, .wina {font-weight:bold;}
+.wina {display:none;}
+
+.hun {background-color:white;float:right;width:100%;height:100%;position:relative;top:-100%;margin:0px;line-height:4em;color:#0f0;text-align:center;font-size:17px;font-family:rarial;z-index:99;display:none;}
+
+audio#tone {display:none;}
+
+#table .cell {float:left;width:3.06em;border:1px solid #eee;height:1.3em;line-height:1.4em;font-size:14px;text-align:center;}
+#table .r4, #table .y4 {color:rgba(0,100,255,1);}
+#table .cell.tit {height:1.3em;width:calc(100%);line-height:1.3em;color:white;background-color:#999;}
+
+
+
+
+
+
+#header.general .logo {background-image:unset;font-size:18px;line-height:42px;width:calc(100% - 80px);}
+#content.general {background-color:#fefefe;}
+#content.general #window {overflow-x:hidden;overflow-y:auto;}
+#footer.general {height:48px;width:100%;border-top:1px solid rgba(0,20,50,1);background-color:rgba(0,20,50,1);position:absolute;bottom:0px;z-index:3;}
+
+#wlist {font-size:14px;padding:14px;line-height:16px}
+#wlist .wheading {font-size:15px;margin-top:4px;}
+#wlist .wheading .hbal {font-size:11px;color:dimgray;margin-top:8px;}
+#wlist .wlisting {font-size:14px;margin-top:8px;}
+#wlist .betx {font-size:13px;fline-height:16px;display:inline-block;margin-top:8px;}
+#wlist .wonx {color:rgba(0,100,255,1);margin-top:4px;}
+#connection {position:fixed;z-index:99;background-color:rgba(255,255,255,0.8);top:0px;left:0px;width:100%;height:100%;}
+.connet {position:absolute;height:96px;width:96px;left:50%;top:50%;}
+.loader {height:100%;}
+
+#wallet .witem font.lilgray {font-size:13px;}
+#wallet .witem font#combal1 {font-size:13px;margin-top:14px;}
+#comba {border-top:1px solid #eee;line-height:1.5em;margin-top:0.5em;padding-top:0.6em;height:5em;}
+.witem:hover, .mitem:active {background-color:rgba(0,100,255,1);color:white;}
+ #wallet .witem:hover font#combal1, #wallet .witem:hover font.lilgray {background-color:rgba(0,100,255,1);color:white;}
+#winzone {height:4.5em;width:calc(100% - 8px);line-height:5em;text-align:center;font-size:14px;font-family:bahn;display:none;font-weight:bold;border-bottom:1px solid #eee;margin-left:4px;background-color:white;position:absolute;top:2px;z-index:9;opacity:0;}
+text.smalldate {font-size:11px;color:#eee;}
