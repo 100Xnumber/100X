@@ -152,7 +152,17 @@ cancelAllBets = function() {
 	pe=0;
 	while(ym.length>pe) {
 		e = ym[ym.length-pe-1];
-	cancelBet(e);
+	
+	vvh = e.querySelector('.heading').innerHTML;
+	bvn = vvh[vvh.length-1];
+	dv = document.querySelector('#amount'+bvn).value;
+	ans = document.getElementById('balance').innerHTML*1+dv*1;
+	document.getElementById('balance').innerHTML=ans.toFixed(2);
+	balance = document.getElementById('balance').innerHTML;
+	balanceControl();
+	e.className = e.getAttribute('class').replace(' locked','');
+		e.querySelector('.status').innerHTML='Place Bet';
+		e.querySelector('.status.autobut').innerHTML='Automate Bet';
 	pe++;}
 	
    window.cssStyle = "";
