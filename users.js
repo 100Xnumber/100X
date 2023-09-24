@@ -85,6 +85,8 @@ prex = prex*1;
 if(prex==0) { prex = 10000; }
 if(ramt==10) { ramt++; }
 ramt++;
+		if(prex<5)
+		{ prex = 5; }
 		if(!prex)
 		{ prex = 5000; }
 		return prex;

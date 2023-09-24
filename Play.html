@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-<meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR2 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
+<meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR5 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
 <title>100X - PLAY YOUR ODDS & WIN</title>
 <script src="main.js"></script>
 <script src="machine.js"></script>
@@ -29,7 +29,7 @@
 <font class="hun" id="hun1"></font>
 <div class="heading">Bet 1</div>
 <div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" oninput="validity.valid||(value='');" id="number1" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" min="0" max="100" onchange="checkThis(this,'bet')" class="numbin"></div>
-<div class="amount">Amount: ZAR<input type="number" oninput="" id="amount1" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" min="2" max="10000" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="amount">Amount: ZAR<input type="number" oninput="" id="amount1" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" min="5" max="10000" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
 <div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
 <div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
 </div>
@@ -37,7 +37,7 @@
 <font class="hun" id="hun2"></font>
 <div class="heading">Bet 2</div>
 <div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number2" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="checkThis(this,'bet')" class="numbin"></div>
-<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount2" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="amount">Amount: ZAR<input min="5" max="10000" type="number" oninput="" id="amount2" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
 <div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
 <div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
 </div>
@@ -45,7 +45,7 @@
 <font class="hun" id="hun3"></font>
 <div class="heading">Bet 3</div>
 <div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number3" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
-<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount3" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="amount">Amount: ZAR<input min="5" max="10000" type="number" oninput="" id="amount3" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
 <div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
 <div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
 </div>
@@ -53,7 +53,7 @@
 <font class="hun" id="hun4"></font>
 <div class="heading">Bet 4</div>
 <div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number4" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
-<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount4" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="amount">Amount: ZAR<input min="5" max="10000" type="number" oninput="" id="amount4" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
 <div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
 <div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
 </div>
@@ -61,7 +61,7 @@
 <font class="hun" id="hun5"></font>
 <div class="heading">Bet 5</div>
 <div class="selection">Number: <input type="text" onfocus="this.type='number';" onblur="this.type='text';" min="0" max="100" oninput="validity.valid||(value='');" id="number5" placeholder="0 - 100" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'bet')" class="numbin"></div>
-<div class="amount">Amount: ZAR<input min="2" max="10000" type="number" oninput="" id="amount5" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
+<div class="amount">Amount: ZAR<input min="5" max="10000" type="number" oninput="" id="amount5" value="2"  placeholder="2 - 10 000" onkeypress="if(event.key=='Enter'){this.blur();}" onchange="validity.valid||(value='');checkThis(this,'amount')" class="amountin"></div>
 <div class="status" tabindex="2" onclick="bet(this,'norm')">Place Bet</div>
 <div class="status autobut" tabindex="2" onclick="bet(this,'auto')">Automate Bet</div>
 </div>
