@@ -226,9 +226,12 @@ balanceControl = function() {
 	c=0;
 	while(c<amz.length) {
 		amz[c].setAttribute('max',decibalance);
-		if(decibalance==0) {
-			amz[c].setAttribute('readonly','true');
-			nmz[c].setAttribute('readonly','true');
+		if(decibalance==0  || decibalance<5) {
+			amz[c].setAttribute('readonly','readonly');
+			nmz[c].setAttribute('readonly','readonly');
+		} else if(decibalance>=5){
+			amz[c].outerHTML = amz[c].outerHTML.replace('readonly','read').replace('readonly','read');
+			nmz[c].outerHTML = nmz[c].outerHTML.replace('readonly','read').replace('readonly','read');
 		}
 	
 	c++; }
