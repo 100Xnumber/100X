@@ -51,6 +51,14 @@ if(localStorage.getItem('balance'))
 	document.querySelector('#wallet').addEventListener('focus',function(){
 	document.querySelector('#wallet').zIndex = '4';	
 	});
+
+	document.querySelector('#profile').addEventListener('blur',function(){
+	document.querySelector('#profile').zIndex = '0';	
+	});
+	
+	document.querySelector('#profile').addEventListener('focus',function(){
+	document.querySelector('#profile').zIndex = '4';	
+	});
 	
 	document.querySelector('.bet.adder').addEventListener('click',function(){
 		if(document.getElementsByClassName('bet')[2].getAttribute('class')=='bet adder') {

@@ -18,7 +18,7 @@
 <div class="menuicon" tabindex="2" onclick="mnu = document.querySelector('#menu'); if(mnu.zIndex=='4'){ mnu.blur(); } else { mnu.focus(); }">☰</div>
 <div class="logo" tabindex="2"><a href=""></a></div>
 <div class="balance" tabindex="2" onclick="wnu = document.querySelector('#wallet'); if(wnu.zIndex=='4'){ wnu.blur(); } else { wnu.focus(); }">ZAR<span id="balance">0.00</span> <font size="2">&#x25BC;</font></div>
-<div class="account" tabindex="2" onclick="location='Account.html';"></div>
+<div class="account" tabindex="2" onclick="pnu = document.querySelector('#profile'); if(pnu.zIndex=='4'){ pnu.blur(); } else { pnu.focus(); }"></div>
 </div>
 <div id="content">
 <div id="window">
@@ -105,6 +105,13 @@
 <div class="witem" tabindex="2" onselectstart="">Transfer <font>(Coming Soon)</font></div>
 <div class="witem" tabindex="2" onselectstart="location = 'Support.html';">Support</div>
 <div class="witem" tabindex="2" onselectstart="location = 'Wins.html';" id="comba">100X Balance<br/><font id="combal1"></font></div>
+<div class="before" tabindex="2" onclick=""></div>
+</div>
+<div id="profile" tabindex="2">
+<div class="pitem" id="fname">John Doe</div>
+<div class="pitem" id="idnumber">895677767457546</div>
+<div class="pitem" id="pnumber">0877764554</div>
+<div class="pitem" id="emailaddress">info@gmail.com</div>
 <div class="before" tabindex="2" onclick=""></div>
 </div>
 <div style="display:none;" id="bb1"></div>
