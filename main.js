@@ -31,7 +31,7 @@ if(svt<20) { xvt = 2; } else if(svt<40) { xvt = 1; } else if(svt<60) { xvt = 0; 
 window.chv = Math.pow(40-hvt,5);
 chv = chv + svt*svt;
 window.chv = window.chv.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-document.getElementById('combal1').innerHTML = window.chv;
+document.getElementById('combal1').innerHTML = 'ZAR'+window.chv;
 
 if(localStorage.getItem('balance'))
 { document.getElementById('balance').innerHTML = localStorage.getItem('balance'); }
