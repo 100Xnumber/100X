@@ -15,7 +15,7 @@ spin = function() {
 			}
 			document.getElementById('eta').innerHTML = kno;
 			document.getElementById('teta').innerHTML = 'Random Selector';
-			tableIT(mT);
+			tableIT(kno);
 			
 		},1);
 }
