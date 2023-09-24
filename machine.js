@@ -230,8 +230,8 @@ balanceControl = function() {
 			amz[c].setAttribute('readonly','readonly');
 			nmz[c].setAttribute('readonly','readonly');
 		} else if(decibalance>=5){
-			amz[c].outerHTML = amz[c].outerHTML.replace('readonly','read').replace('readonly','read');
-			nmz[c].outerHTML = nmz[c].outerHTML.replace('readonly','read').replace('readonly','read');
+			amz[c].removeAttribute('readonly');
+			nmz[c].removeAttribute('readonly');
 		}
 	
 	c++; }
