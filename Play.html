@@ -1,6 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 <meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR5 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
 <title>100X - PLAY YOUR ODDS & WIN</title>
 <script src="main.js"></script>
@@ -71,20 +72,20 @@
 </div>
 </div>
 <div id="footer">
-<div class="prl" tabindex="2" onclick="toggle('.pastrounds',this);">Past Rounds</div>
-<div class="sbl" tabindex="2" onclick="toggle('.sidebets',this);">Top Bets</div>
+<div class="prl" tabindex="2" onclick="toggle('.pastrounds',this);">Previous Rounds</div>
+<div class="sbl" tabindex="2" onclick="toggle('.sidebets',this);">Other Players</div>
 </div>
 
 
 <div class="pastrounds">
-<div class="heading">Past Rounds</div>
+<div class="heading">Previous Rounds</div>
 <div class="list">
 <div class="listing"> </div>
 </div>
 </div>
 
 <div class="sidebets">
-<div class="heading">Top Bets</div>
+<div class="heading">Other Players</div>
 <div class="list">
 <div class="listing"></div>
 </div>

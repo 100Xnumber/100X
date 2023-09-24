@@ -342,6 +342,8 @@ cmt = co[1]*1;
 			date = new Date();
 		document.querySelector('.pastrounds .list').innerHTML = '<div class="listing">Winning 100X number: '+ w + ' <br/><text class="smalldate">'+ cu[0] +'</text></div>' + listing + '<div class="split"></div>' + document.querySelector('.pastrounds .list').innerHTML; 
 		localStorage.setItem('pastrounds',document.querySelector('.pastrounds .list').innerHTML);
+		} else {
+document.querySelector('.pastrounds .list').innerHTML = '<div class="listing">Winning 100X number: '+ w + ' <br/><text class="smalldate">'+ cu[0] +'</text></div><div class="split"></div>' + document.querySelector('.pastrounds .list').innerHTML; 
 		}
 		
 		dola(w);

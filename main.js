@@ -148,23 +148,13 @@ if(window.stopAll==false) {
 }
 
 cancelAllBets = function() {
-	ym = document.getElementsByClassName('locked');
-	pe=0;
-	while(ym.length>pe) {
-		e = ym[ym.length-pe-1];
 	
-	vvh = e.querySelector('.heading').innerHTML;
-	bvn = vvh[vvh.length-1];
-	dv = document.querySelector('#amount'+bvn).value;
-	ans = document.getElementById('balance').innerHTML*1+dv*1;
-	document.getElementById('balance').innerHTML=ans.toFixed(2);
-	balance = document.getElementById('balance').innerHTML;
-	balanceControl();
-	e.className = e.getAttribute('class').replace(' locked','');
-		e.querySelector('.status').innerHTML='Place Bet';
-		e.querySelector('.status.autobut').innerHTML='Automate Bet';
-	pe++;}
-	
+	e = document.getElementsByClassName('locked');
+    cancelBet(e[4]);
+    cancelBet(e[3]);
+    cancelBet(e[2]);
+    cancelBet(e[1]);
+    cancelBet(e[0]);
    window.cssStyle = "";
 	return "All bets have been cancelled.";
 }
