@@ -108,3 +108,7 @@ audio#tone {display:none;}
  #wallet .witem:hover font#combal1, #wallet .witem:hover font.lilgray {background-color:rgba(0,100,255,1);color:white;}
 #winzone {height:4.5em;width:calc(100% - 8px);line-height:5em;text-align:center;font-size:14px;font-family:bahn;display:none;font-weight:bold;border-bottom:1px solid #eee;margin-left:4px;background-color:white;position:absolute;top:2px;z-index:9;opacity:0;}
 text.smalldate {font-size:11px;color:#eee;}
+.bet {outline:none;outline-color:transparent;}
+.bet:focus {border:1px solid #0f0;}
+.suicon {height:64px;width:64px;text-align:center;float:left;margin-left:22px;margin-top:24px;}
+.suicon a {text-decoration:none;font-size:12px;line-height:24px;}

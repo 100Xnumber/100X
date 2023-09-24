@@ -222,7 +222,7 @@ balanceControl = function() {
 	bd = balance.split('.');
 	decibalance = bd[0]; 
 	//amount limits
-	amz = document.querySelectorAll('input[min="2"]');
+	amz = document.querySelectorAll('input[min="5"]');
 	nmz = document.querySelectorAll('input[min="0"]');
 	c=0;
 	while(c<amz.length) {
@@ -267,7 +267,7 @@ cmt = co[1]*1;
 		while(i<ck.length) {
 			sbt = 0;
 		sel = ck[i].querySelector('input[min="0"]');
-		sul = ck[i].querySelector('input[min="2"]');
+		sul = ck[i].querySelector('input[min="5"]');
 		sx = sel.value*1;
 		su = sul.value*1;
 		hp = su;

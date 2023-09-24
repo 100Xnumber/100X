@@ -19,6 +19,20 @@ toggle = function(clas,e) {
 
 
 window.onpageshow = function() {
+vate = new Date();
+va = vate+"";
+vu =va.split('GMT');
+vi = vu[0].split(' ');
+vo = vi[4].split(':');
+svt = vo[2]*1;
+mvt = vo[1]*1;
+hvt = vo[0]*1;
+if(svt<20) { xvt = 2; } else if(svt<40) { xvt = 1; } else if(svt<60) { xvt = 0; }
+window.chv = Math.pow(40-hvt,5);
+chv = chv + svt*svt;
+window.chv = window.chv.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+document.getElementById('combal1').innerHTML = window.chv;
+
 if(localStorage.getItem('balance'))
 { document.getElementById('balance').innerHTML = localStorage.getItem('balance'); }
 	balanceControl();

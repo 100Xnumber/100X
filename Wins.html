@@ -8,6 +8,24 @@
 <link rel="shortcut icon" href="icon.png">
 <meta name="viewport" content="width=device-width">
 <style></style>
+<script>
+onpageshow = function() {
+rate = new Date();
+ra = rate+"";
+ru = ra.split('GMT');
+ri = ru[0].split(' ');
+ro = ri[4].split(':');
+st = ro[2]*1;
+met = ro[1]*1;
+ht = ro[0]*1;
+if(st<20) { xt = 2; } else if(st<40) { xt = 1; } else if(st<60) { xt = 0; }
+window.chu = Math. pow(40-ht,5);
+chu = chu + st*st;
+
+window.chu = window.chu.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+document.getElementById('hxbalance').innerHTML = window.chu;
+}
+</script>
 </head>
 <body>
 <div id="header" class="general">
@@ -18,7 +36,7 @@
 <div id="window">
 <div id="wlist">
 <div class="wheading">Top 5<br/>
-<font class="hbal">100X Balance: ZAR<font id="hxbalance">19 350 090</font> - Updated Today</font></div><br/>
+<font class="hbal">100X Balance: ZAR<font id="hxbalance"></font> - Updated Today</font></div><br/>
 <div class="wlisting">Jabulani Mahlangu - (100X number: 97)
 <br/><span class="betx">Bet 1: #97 - ZAR10 000 x 100 > ZAR1000 000
 <br/>Bet 2: #97 - ZAR10 000 x 100 > ZAR1000 000
