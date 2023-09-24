@@ -14,7 +14,6 @@ spin = function() {
 			kno = 0;
 			}
 			document.getElementById('eta').innerHTML = kno;
-			aby = document.getElementById('real_time').innerHTML;
 			document.getElementById('teta').innerHTML = 'Random Selector';
 			
 			
