@@ -22,10 +22,42 @@
 <div id="wlist">
 <div class="wheading">Select a withdrawal method<br/>
 <font class="hbal">Minimum withdrawal amount is ZAR100.00 plus a ZAR5.00 withdrawal fee. Thus your minimum balance should be ZAR105.00 before you can withdraw. See the <a href="Payouts">Payout Options</a> for more information.</font></div><br/>
-<div class="wlisting"><div class="withopt" onfocus="expand(this)" tabindex="2">FNB eWallet &#x25BC;</div><span class="data">
+<div class="wlisting"><div class="withopt eft" onfocus="expand(this)" tabindex="2">EFT Payment &#x25BC;</div><span class="data">
+<input type="number" id="accountnumber" name="accountnumber" class="fwith" placeholder="Account Number" value="">
+<input type="number" id="bankname" name="bankname" class="fwith" placeholder="Bank Name" value="">
+<input type="number" id="accounttype" name="accounttype" class="fwith" placeholder="Account Type" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('eft')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt fnb" onfocus="expand(this)" tabindex="2">FNB eWallet &#x25BC;</div><span class="data">
 <input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
 <input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
 <button onclick="withdraw('ewallet')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt nedbank" onfocus="expand(this)" tabindex="2">Nedbank Send iMali&#x25BC;</div><span class="data">
+<input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('nedbank')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt standardbank" onfocus="expand(this)" tabindex="2">Standard Bank Instant Money &#x25BC;</div><span class="data">
+<input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('instant')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt absa" onfocus="expand(this)" tabindex="2">ABSA Cashsend &#x25BC;</div><span class="data">
+<input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('cashsend')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt capitec" onfocus="expand(this)" tabindex="2">Capitec Money Voucher &#x25BC;</div><span class="data">
+<input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('capitec')" class="phot">Withdraw</button>
+</span>
+</div><br/><div class="wlisting"><div class="withopt shopritecheckers" onfocus="expand(this)" tabindex="2">Checkers Money transfer &#x25BC;</div><span class="data">
+<input type="number" id="phonenumber" name="phone" class="fwith" placeholder="Phone Number" value="">
+<input type="number" id="selectamount" name="amount" class="fwith" placeholder="Withdrawal Amount" value="" min="100" max="3000">
+<button onclick="withdraw('checkers')" class="phot">Withdraw</button>
 </span>
 </div><br/>
 

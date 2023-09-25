@@ -122,6 +122,13 @@ text.smalldate {font-size:11px;color:#eee;}
 .suicon a {text-decoration:none;font-size:12px;line-height:24px;}
 
 .fwith {width:100%;height:32px;margin-top:8px;font-size:15px;padding-left:8px;line-height:32px;margin-left:2px;border:1px solid #eee;}
-.withopt {font-weight:bold;text-align:right;background-image:url(fnb.png);background-size:auto 145%;background-position:0 50%;border:1px solid #eee;}
+.withopt.eft {font-weight:bold;text-align:right;background-image:url(eft.png);background-size:auto 169%;background-position:-8px 50%;border:1px solid white;}
+.withopt.fnb {font-weight:bold;text-align:right;background-image:url(fnb.png);background-size:auto 145%;background-position:-2px 50%;border:1px solid white;}
+.withopt.nedbank {font-weight:bold;text-align:right;background-image:url(nedbank.png);background-size:auto 130%;background-position:-15px 10%;border:1px solid white;}
+.withopt.standardbank  {font-weight:bold;text-align:right;background-image:url(standardbank.png);background-size:auto 105%;background-position:0 50%;border:1px solid white;}
+.withopt.absa {font-weight:bold;text-align:right;background-image:url(absa.png);background-size:auto 130%;background-position:0 50%;border:1px solid white;}
+.withopt.capitec {font-weight:bold;text-align:right;background-image:url(capitec.png);background-size:auto 100%;background-position:0 50%;border:1px solid white;}
+.withopt.shopritecheckers {font-weight:bold;text-align:right;background-image:url(shopritecheckers.jpg);background-size:auto 100%;background-position:0 50%;border:1px solid white;}
+.withopt {height:24px;line-height:24px;}
 .phot {background-color:rgba(20,20,20,1);border:1px solid black;border-radius:3px;color:white;font-weight:bold;font-size:15px;width:100%;height:32px;margin-top:8px;}
-.withopt+span {display:non;;}
+.withopt+span {display:none;;}
