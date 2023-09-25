@@ -29,8 +29,8 @@ ri = ru[0].split(' ');
 ro = ri[4].split(':');
 st = ro[2]*1;
 mt = ro[1]*1;
-if(st<6) { ort =  1; } else if(st<12) { ort = 2; } else if(st<18) { ort = 3; } else if(st<24) { ort =  4; } else if(st<30) { ort =  5; } else if(st<36) { ort = 6; } else if(st<42) { ort = 7; } else if(st<48) { ort = 8; } else if(st<54) { ort = 9; } else if(st<60) { ort =  10; } else if(st<60) { ort =  12; }
-	
+//if(st<6) { ort =  1; } else if(st<12) { ort = 2; } else if(st<18) { ort = 3; } else if(st<24) { ort =  4; } else if(st<30) { ort =  5; } else if(st<36) { ort = 6; } else if(st<42) { ort = 7; } else if(st<48) { ort = 8; } else if(st<54) { ort = 9; } else if(st<60) { ort =  10; } else if(st<60) { ort =  12; }
+	if(st<30) { ort =  1; } else if(st<60) { ort = 2; } 
 let currentIndex = array.length,  randomIndex;
   // While there remain elements to shuffle.
   while (currentIndex > 0) {
@@ -49,6 +49,15 @@ window.ort = ort;
 }
 window.ramt = 1;
 ramount = function() {
+rate = new Date();
+ra = rate+"";
+ru = ra.split('GMT');
+ri = ru[0].split(' ');
+ro = ri[4].split(':');
+st = ro[2]*1;
+mt = ro[1]*1;
+	if(st<30) { ort =  1; } else if(st<60) { ort = 2; } 
+	 ort = mt;
 prex = ort*ramt/5;
 prex = prex +"";
 yf = prex.split('.');
@@ -82,18 +91,28 @@ prex = prex[1] + "00"; }
 else if(prex.length>1) { prex = prex[0] + "0"; }
 else if(prex.length>0) { prex = "1" + prex[0]; }
 prex = prex*1;
-if(prex==0) { prex = 10000; }
+if(prex==0) { prex = 2500; }
 if(ramt==10) { ramt++; }
 ramt++;
 		if(prex<5)
 		{ prex = 5; }
 		if(!prex)
-		{ prex = 5000; }
-		return prex;
+		{ prex = 1000; }
+	     prex = prex + "";
+		return prex.replace('920','900').replace('130','150').replace('110','100').replace('140','150').replace('820','800').replace('840','850').replace('940','900').replace('720','750').replace('740','750').replace('420','400').replace('760','1500').replace('720','750').replace('440','450').replace('640','650').replace('860','850').replace('330','350').replace('660','600').replace('930','90').replace('880','15').replace('960','1800').replace('620','600').replace('410','400').replace('960','1800').replace('810','850').replace('130','150').replace('530','500').replace('710','700');
 }
 
 window.ront = 10;
-rnumber = function() {
+rnumber = function() {rate = new Date();
+ra = rate+"";
+ru = ra.split('GMT');
+ri = ru[0].split(' ');
+ro = ri[4].split(':');
+st = ro[2]*1;
+mt = ro[1]*1;
+	if(st<30) { ort =  1; } else if(st<60) { ort = 2; } 
+	
+	 ort = mt;
 		const ncx = [7,4,9,3,1,5,0,8,6,2];
 		icx = shuffle(ncx);
 		prex = icx[ront-1];

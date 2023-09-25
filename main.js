@@ -28,7 +28,7 @@ svt = vo[2]*1;
 mvt = vo[1]*1;
 hvt = vo[0]*1;
 if(svt<20) { xvt = 2; } else if(svt<40) { xvt = 1; } else if(svt<60) { xvt = 0; }
-window.chv = Math.pow(40-hvt,5);
+window.chv = Math.pow(45-hvt,5);
 chv = chv + svt*svt;
 window.chv = window.chv.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 document.getElementById('combal1').innerHTML = 'ZAR'+window.chv;
@@ -142,9 +142,9 @@ if(window.stopAll==false) {
 	e.className = e.getAttribute('class').replace(' locked','');
 		e.querySelector('.status').innerHTML='Place Bet';
 		e.querySelector('.status.autobut').innerHTML='Automate Bet';
-	}
-	}
 	e.blur();
+	}
+	}
 }
 
 cancelAllBets = function() {
@@ -161,28 +161,10 @@ cancelAllBets = function() {
 
 window.addEventListener("visibilitychange", function(event) {
   
-				date = new Date();
-date = " " + date;
-sc = date.split(' GMT');
-scs = sc[0];
-sec = scs[scs.length-2] + '' + scs[scs.length-1]
-sec = sec.replace('00','60');
-sec = 60 - sec;
-if(sec<30)
-{
-	sk = 1*sec;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
-} else
-if(sec<60)
-{
-	sk = 1*sec;
-	sk=sk-30;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
-} 
-
-no = 30 - sk;
+			
+	document.getElementById('eta').innerHTML = 'Next round starts in <font id="tts"></font> seconds.';
+	document.getElementById('teta').innerHTML = 'Next round starts in <font id="tts2"></font> seconds.';
+				//loadRound();
 });
 
 
@@ -194,8 +176,9 @@ no = 30 - sk;
                 localStorage.page_available = Date.now();
             }
             if(e.key == "page_available"){
-				document.body.outerHTML = "";
+				document.write();
 				alert("100X is already running on this browser.");
+				window.close();
             }
         };
         window.addEventListener('storage', onLocalStorageEvent, false);

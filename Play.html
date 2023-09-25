@@ -144,5 +144,17 @@
 <div id="real_time" style="display:none;"></div>
 </body>
 <script>
+ var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+    if (!fs) {
+      console.log("check failed?");
+    } else {
+      fs(window.TEMPORARY,
+         100,
+         console.log.bind(console, "not in incognito mode"),
+         function() { 
+				alert("100X Can't run in incognito mode.");
+				window.close();
+				});
+    }
 </script>
 </html>

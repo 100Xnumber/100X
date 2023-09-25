@@ -34,20 +34,20 @@ sec = 60 - sec*1;
 if(sec<30)
 {
 	sk = 1*sec;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
+	if(document.querySelector('#tts'))   {	document.querySelector('#tts').innerHTML = sk; 
+	document.querySelector('#tts2').innerHTML = sk; } 
 } else
 if(sec<60)
 {
 	sk = 1*sec;
 	sk=sk-30;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
+	if(document.querySelector('#tts'))   {	document.querySelector('#tts').innerHTML = sk; 
+	document.querySelector('#tts2').innerHTML = sk; } 
 } 
 if(sk<23)
 {
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
+	if(document.querySelector('#tts'))   {	document.querySelector('#tts').innerHTML = sk; 
+	document.querySelector('#tts2').innerHTML = sk; } 
 } 
 window.realNO = sk;;
 if(sk>23) 
@@ -96,15 +96,15 @@ sec = 60 - sec;
 if(sec<30)
 {
 	sk = 1*sec;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
+	if(document.querySelector('#tts'))   {	document.querySelector('#tts').innerHTML = sk; 
+	document.querySelector('#tts2').innerHTML = sk; } 
 } else
 if(sec<60)
 {
 	sk = 1*sec;
 	sk=sk-30;
-	document.querySelector('#tts').innerHTML = sk; 
-	document.querySelector('#tts2').innerHTML = sk; 
+	if(document.querySelector('#tts'))   {	document.querySelector('#tts').innerHTML = sk; 
+	document.querySelector('#tts2').innerHTML = sk; } 
 } 
 
 no = 30 - sk;
@@ -130,8 +130,9 @@ no = 30 - sk;
 		rayt = 200;
 		dole(); 
 		}
-			document.getElementById('tts').innerHTML = no;
-			document.getElementById('tts2').innerHTML = no;
+			if(document.getElementById('tts'))
+			{document.getElementById('tts').innerHTML = no;
+			document.getElementById('tts2').innerHTML = no;}
 			non = 30-no;
 			non = non*30;
 			//document.getElementById('noloader').style.width = "calc(" + non + "%)";	

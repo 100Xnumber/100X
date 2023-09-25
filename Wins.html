@@ -19,7 +19,7 @@ st = ro[2]*1;
 met = ro[1]*1;
 ht = ro[0]*1;
 if(st<20) { xt = 2; } else if(st<40) { xt = 1; } else if(st<60) { xt = 0; }
-window.chu = Math. pow(40-ht,5);
+window.chu = Math. pow(45-ht,5);
 chu = chu + st*st;
 
 window.chu = window.chu.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

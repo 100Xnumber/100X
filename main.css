@@ -120,3 +120,8 @@ text.smalldate {font-size:11px;color:#eee;}
 .bet:focus {border:1px solid #0f0;}
 .suicon {height:64px;width:64px;text-align:center;float:left;margin-left:22px;margin-top:24px;}
 .suicon a {text-decoration:none;font-size:12px;line-height:24px;}
+
+.fwith {width:100%;height:32px;margin-top:8px;font-size:15px;padding-left:8px;line-height:32px;margin-left:2px;border:1px solid #eee;}
+.withopt {font-weight:bold;text-align:right;background-image:url(fnb.png);background-size:auto 145%;background-position:0 50%;border:1px solid #eee;}
+.phot {background-color:rgba(20,20,20,1);border:1px solid black;border-radius:3px;color:white;font-weight:bold;font-size:15px;width:100%;height:32px;margin-top:8px;}
+.withopt+span {display:non;;}

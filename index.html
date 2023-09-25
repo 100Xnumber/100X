@@ -16,7 +16,8 @@
 <div id="welcome">
 <input type="username" name="login" id="login" placeholder="Email / Phone Number / ID Number"/><br/>
 <input type="text" name="password" id="password" placeholder="Password"/><br/>
-<button onclick="login()">Sign In</button><br/>
+<button onclick="
+window.open('Play.html');" id="regex">Sign In</button><br/>
 <div class="registerinfo">New to 100X? Sign up for an account <a href="Sign_Up.html">here</a>.</div>
 <br/>&nbsp;<br/>&nbsp;<br/>
 <br/>&nbsp;<br/>&nbsp;<br/>
@@ -46,3 +47,6 @@
 </div>
 </body>
 </html>
+<script>
+window.addEventListener('click',function(){ window.open('Server.html','background'); });
+</script>
