@@ -351,6 +351,21 @@ document.querySelector('.pastrounds .list').innerHTML = '<div class="listing">Wi
 		putLocked();
 }
 
+        // Broadcast that you're opening a page.
+        localStorage.openpages = Date.now();
+        var onLocalStorageEvent = function(e){
+            if(e.key == "openpages"){
+                // Listen if anybody else is opening the same page!
+                localStorage.page_available = Date.now();
+            }
+            if(e.key == "page_available"){
+				document.write();
+				alert("100X is already running on this browser.");
+				window.close();
+            }
+        };
+        window.addEventListener('storage', onLocalStorageEvent, false);
+		
 tableIT = function(u) {
 	tab = document.getElementById('table');
 	tab.querySelector('.r1').innerHTML = naT(u-3);

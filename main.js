@@ -168,20 +168,6 @@ window.addEventListener("visibilitychange", function(event) {
 });
 
 
-        // Broadcast that you're opening a page.
-        localStorage.openpages = Date.now();
-        var onLocalStorageEvent = function(e){
-            if(e.key == "openpages"){
-                // Listen if anybody else is opening the same page!
-                localStorage.page_available = Date.now();
-            }
-            if(e.key == "page_available"){
-				document.write();
-				alert("100X is already running on this browser.");
-				window.close();
-            }
-        };
-        window.addEventListener('storage', onLocalStorageEvent, false);
 
 
 
@@ -230,5 +216,15 @@ window.addEventListener('focus',function() {
 
 
 expand = function(e) {
-	
+	var o = 0;
+	var ow = document.getElementsByClassName('data');
+	while(o<ow.length) {
+	document.getElementsByClassName('data')[o].style.display = 'none';
+	o++; }
+	if(
+	e.nextSibling.style.display == "none") {
+	e.nextSibling.style.display = "block";
+	} else {
+	e.nextSibling.style.display = "block";
+	}
 }
