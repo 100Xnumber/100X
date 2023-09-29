@@ -1,9 +1,13 @@
 <html>
 <head>
+<script>
+if(!localStorage.getItem('idnumber'))
+{location = 'index.html';}
+</script>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 <meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR5 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
-<title>100X - PLAY YOUR ODDS & WIN</title>
+<title>100X - PLAY BY YOUR ODDS</title>
 <script src="main.js"></script>
 <script src="machine.js"></script>
 <link rel="stylesheet" href="main.css">
@@ -109,10 +113,11 @@
 <div class="before" tabindex="2" onclick=""></div>
 </div>
 <div id="profile" tabindex="2">
-<div class="pitem" id="fname">John Doe</div>
-<div class="pitem" id="idnumber">895677767457546</div>
-<div class="pitem" id="pnumber">0877764554</div>
-<div class="pitem" id="emailaddress">info@gmail.com</div>
+<div class="pitem" id="fname"></div>
+<div class="pitem" id="idnumber"></div>
+<div class="pitem" id="pnumber"></div>
+<div class="pitem" id="emailaddress"></div>
+<div class="pitem" tabindex="2" onselectstart="localStorage.clear();location='index.html';">Logout</div>
 <div class="before" tabindex="2" onclick=""></div>
 </div>
 <div style="display:none;" id="bb1"></div>
@@ -144,5 +149,16 @@
 <div id="real_time" style="display:none;"></div>
 </body>
 <script>
+</script>
+<script>
+if(localStorage.getItem('idnumber'))
+{
+document.getElementById('idnumber').innerHTML = localStorage.getItem('idnumber');
+document.getElementById('pnumber').innerHTML = localStorage.getItem('phone');
+document.getElementById('emailaddress').innerHTML = localStorage.getItem('email');
+document.getElementById('fname').innerHTML = localStorage.getItem('fullname').replace('%20',' ');
+document.getElementById('balance').innerHTML = localStorage.getItem('balance');
+balanceControl();
+}
 </script>
 </html>

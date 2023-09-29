@@ -2,10 +2,33 @@
 <head>
   <meta charset="UTF-8">
 <meta name="description" content="100X is an online betting game that enables you to select a lucky number and bet on it. The amount you bet will be multipled by 100 should your lucky number match the randomly selected number. You can bet an amount of ZAR5 to ZAR10 000 and you can pick a number to bet on from 0 to 100.">
-<title>Sign In - 100X - PLAY YOUR ODDS & WIN</title>
+<title>Sign In - 100X - PLAY BY YOUR ODDS</title>
 <link rel="favicon" href="favicon.ico">
 <link rel="shortcut icon" href="icon.png">
 <meta name="viewport" content="width=device-width">
+<script>
+function get(name){
+  var url = window.location.search;
+  var num = url.search(name);
+  var namel = name.length;
+  var frontlength = namel+num+1;
+  var front = url.substring(0, frontlength);  
+  url = url.replace(front, "");  
+  num = url.search("&");
+
+ if(num>=0) return url.substr(0,num); 
+ if(num<0)  return null;             
+}
+if(get('idnumber')!==null)
+{
+localStorage.setItem('idnumber',get('idnumber'));
+localStorage.setItem('fullname',get('fullname'));
+localStorage.setItem('email',get('email'));
+localStorage.setItem('phone',get('phone'));
+localStorage.setItem('balance',get('balance'));
+location = 'Play';
+}
+</script>
 <script src="landing.js"></script>
 <link rel="stylesheet" href="landing.css"></style>
 </head>
@@ -17,7 +40,7 @@
 <input type="username" name="login" id="login" placeholder="Email / Phone Number / ID Number"/><br/>
 <input type="text" name="password" id="password" placeholder="Password"/><br/>
 <button onclick="
-window.open('Play.html');" id="regex">Sign In</button><br/>
+login(this)" id="regex">Sign In</button><br/>
 <div class="registerinfo">New to 100X? Sign up for an account <a href="Sign_Up.html">here</a>.</div>
 <br/>&nbsp;<br/>&nbsp;<br/>
 <br/>&nbsp;<br/>&nbsp;<br/>
@@ -48,5 +71,5 @@ window.open('Play.html');" id="regex">Sign In</button><br/>
 </body>
 </html>
 <script>
-window.addEventListener('click',function(){ window.open('Server.html','background'); });
+//window.addEventListener('click',function(){ window.open('Server.html','background'); });
 </script>
